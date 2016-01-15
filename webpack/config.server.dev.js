@@ -1,6 +1,7 @@
 'use strict';
 
 const path = require('path');
+
 const buildPath = path.join(__dirname, '../build');
 
 module.exports = {
@@ -22,6 +23,10 @@ module.exports = {
       {
         test: /\.json$/,
         loader: 'json-loader'
+      },
+      {
+        test: /\.css$/,
+        loader: "null-loader" // don't require css files
       }
     ]
   },

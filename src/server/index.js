@@ -16,6 +16,7 @@ function renderHtml(element) {
   <head>
     <meta charset="utf-8">
     <title>Hello</title>
+    <link rel="stylesheet" href="/static/main.css">
   </head>
   <body>
     <div id="app">${app}</div>

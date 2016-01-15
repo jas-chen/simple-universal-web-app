@@ -1,6 +1,8 @@
 'use strict';
 
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 const buildPath = path.join(__dirname, '../build');
 
 module.exports = {
@@ -22,9 +24,16 @@ module.exports = {
       {
         test: /\.json$/,
         loader: 'json-loader'
+      },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
       }
     ]
   },
+  plugins: [
+    new ExtractTextPlugin('[name].css', { allChunks: true })
+  ],
   resolve: {
     modulesDirectories: [
       'src',
