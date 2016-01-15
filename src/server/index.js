@@ -1,3 +1,4 @@
+import path from 'path';
 import express from 'express';
 import React from 'react';
 import ReactServer from 'react-dom/server';
@@ -18,12 +19,21 @@ function renderHtml(element) {
   </head>
   <body>
     <div id="app">${app}</div>
+    <script src="/static/client.js"></script>
   </body>
 </html>`;
 }
 
-app.get('/', (req, res) => {
-  res.send(renderHtml(<App />));
+const staticPath = path.join(process.cwd(), './build/www');
+
+app.use(express.static(staticPath));
+
+app.get('/*', function (req, res, next) {
+  if (req.accepts('html') && req.originalUrl !== '/favicon.ico') {
+    res.send(renderHtml(<App />));
+  } else {
+    next();
+  }
 });
 
 app.listen(NODE_PORT, NODE_HOST, (err) => {
