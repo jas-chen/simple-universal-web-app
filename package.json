@@ -1,0 +1,20 @@
+{
+  "name": "simple-universal-web-app",
+  "version": "0.0.1",
+  "description": "Simple universal web app",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jas-chen/simple-universal-web-app.git"
+  },
+  "author": "Jas Chen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jas-chen/simple-universal-web-app/issues"
+  },
+  "homepage": "https://github.com/jas-chen/simple-universal-web-app#readme"
+}
