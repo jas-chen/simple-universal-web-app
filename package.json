@@ -5,6 +5,10 @@
   "private": true,
   "main": "index.js",
   "scripts": {
+    "watch": "webpack --watch --colors --config webpack/config.dev.js",
+    "dev": "node-dev build/server.js",
+    "build": "webpack --colors --config webpack/config.dev.js",
+    "start": "node build/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,6 +28,7 @@
     "babel-preset-react": "^6.3.13",
     "express": "^4.13.3",
     "json-loader": "^0.5.4",
+    "node-dev": "^2.7.1",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
     "webpack": "^1.12.11"
