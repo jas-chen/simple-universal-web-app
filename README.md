@@ -8,7 +8,7 @@
 - Babel
   - ES2015
   - JSX
-- Extract css from to `.css` file
+- Extract css to `.css` file
 
 
 #### How to run
