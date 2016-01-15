@@ -1,67 +1,7 @@
 'use strict';
 
-const path = require('path');
-const buildPath = path.join(__dirname, '../build');
-
-const server = {
-  context: path.resolve(__dirname, '..'),
-  entry: './src/server',
-  output: {
-    path: buildPath,
-    filename: 'server.js'
-  },
-  target: 'node',
-  progress: true,
-  module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loaders: ['babel-loader']
-      },
-      {
-        test: /\.json$/,
-        loader: 'json-loader'
-      }
-    ]
-  },
-  resolve: {
-    modulesDirectories: [
-      'src',
-      'node_modules'
-    ]
-  }
-};
-
-const client = {
-  context: path.resolve(__dirname, '..'),
-  entry: './src/client',
-  output: {
-    path: path.join(buildPath, './www/static'),
-    publicPath: '/static/',
-    filename: 'client.js'
-  },
-  progress: true,
-  module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loaders: ['babel-loader']
-      },
-      {
-        test: /\.json$/,
-        loader: 'json-loader'
-      }
-    ]
-  },
-  resolve: {
-    modulesDirectories: [
-      'src',
-      'node_modules'
-    ]
-  }
-};
+const server = require('./config.server.dev.js');
+const client = require('./config.client.dev.js');
 
 module.exports = [
   server,
