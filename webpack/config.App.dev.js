@@ -33,7 +33,7 @@ module.exports = {
       }
     ]
   },
-  // postcss: require('./postcss.js'),
+  postcss: require('./postcss.js'),
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
