@@ -17,11 +17,8 @@ if (App.__esModule && App.default) {
 const NODE_PORT = process.env.NODE_PORT || 3000;
 const NODE_HOST = process.env.NODE_HOST || '0.0.0.0';
 
-const state = {
-  num: 5566
-};
-
-function renderHtml(element) {
+function renderHtml(state) {
+  const element = React.createElement(App, state);
   const app = ReactServer.renderToString(element);
 
   return `<!doctype html>
@@ -46,10 +43,12 @@ const staticPath = path.join(__dirname, '../../build/www');
 app.use(express.static(staticPath));
 
 app.get('/*', function (req, res, next) {
+  const state = {
+    num: Math.floor(Math.random() * 100)
+  };
+
   if (req.accepts('html') && req.originalUrl !== '/favicon.ico') {
-    res.send(renderHtml(
-      React.createElement(App, state)
-    ));
+    res.send(renderHtml(state));
   } else {
     next();
   }
