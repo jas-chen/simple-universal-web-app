@@ -29,9 +29,9 @@ open http://localhost:3000
 
 #### How does it work?
 This approach builds main React component `App` into a node.js module, and required by `server.js`.
-In this way we can avoid that node.js can't require .css files.
+Avoid that node.js can't require .css files, and also support using css modules in server side nicely. [See the discussion of using css modules on server side](https://github.com/css-modules/css-modules/issues/9).
 
-But we build `App` twice, that's a trad off.
+But it will build `App` twice, that's a trad off :stuck_out_tongue_winking_eye:.
 
 
 
