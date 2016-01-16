@@ -35,8 +35,8 @@ But it will build `App` twice, that's a trad off :stuck_out_tongue_winking_eye:.
 
 
 
-#### Todo
-- Webpack-dev-server
+#### Not included
+- Auto reload browser
 - Build for production
 
 
