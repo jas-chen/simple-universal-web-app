@@ -28,11 +28,11 @@ open http://localhost:3000
 ```
 
 #### How does it work?
-To deal with the issue of requiring css files on the server side and support css modules on the server side,
+To deal with [the issue of supporting css modules on the server side](https://github.com/css-modules/css-modules/issues/9),
 this demo builds the main React component `App` into a node.js module for the server to require.
 
 
-It will build `App` twice, that's a trad off :stuck_out_tongue_winking_eye:.
+The trad off is, it will build `App` twice :stuck_out_tongue_winking_eye:.
 
 
 
