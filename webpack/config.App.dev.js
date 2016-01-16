@@ -40,6 +40,7 @@ module.exports = {
     }),
     new ExtractTextPlugin('style.css', { allChunks: true })
   ],
+  externals: 'react',
   resolve: {
     modulesDirectories: [
       'src',
