@@ -18,7 +18,10 @@
 ```
 npm install
 
-# watch and build
+# build
+npm run build:dev
+
+# or watch
 npm run watch
 
 # start node.js server
