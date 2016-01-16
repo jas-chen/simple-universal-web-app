@@ -29,7 +29,7 @@ function renderHtml(element) {
   <head>
     <meta charset="utf-8">
     <title>Hello</title>
-    <link rel="stylesheet" href="/static/main.css">
+    <link rel="stylesheet" href="/static/style.css">
     <script>
       window.__state = ${JSON.stringify(state)} ;
     </script>
