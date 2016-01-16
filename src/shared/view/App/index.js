@@ -6,6 +6,7 @@ export default class App extends React.Component {
     return (
       <main className={style.main}>
         <h1 className={style.h1}>Hello</h1>
+        <p>Your number: {this.props.num}</p>
       </main>
     );
   }

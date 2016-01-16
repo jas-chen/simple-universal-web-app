@@ -1,6 +1,7 @@
 .main {
   /* test autoprefixer */
   display: flex;
+  flex-direction: column;
 }
 
 .h1 {

@@ -17,6 +17,10 @@ if (App.__esModule && App.default) {
 const NODE_PORT = process.env.NODE_PORT || 3000;
 const NODE_HOST = process.env.NODE_HOST || '0.0.0.0';
 
+const state = {
+  num: 5566
+};
+
 function renderHtml(element) {
   const app = ReactServer.renderToString(element);
 
@@ -26,6 +30,9 @@ function renderHtml(element) {
     <meta charset="utf-8">
     <title>Hello</title>
     <link rel="stylesheet" href="/static/main.css">
+    <script>
+      window.__state = ${JSON.stringify(state)} ;
+    </script>
   </head>
   <body>
     <div id="app">${app}</div>
@@ -41,7 +48,7 @@ app.use(express.static(staticPath));
 app.get('/*', function (req, res, next) {
   if (req.accepts('html') && req.originalUrl !== '/favicon.ico') {
     res.send(renderHtml(
-      React.createElement(App, null)
+      React.createElement(App, state)
     ));
   } else {
     next();

@@ -11,6 +11,7 @@
 - PostCSS (autoprefixer and cssnano in this demo)
 - [CSS Modules](http://glenmaddern.com/articles/css-modules) (global css is dead!)
 - Extract css to `.css` file
+- Send `state` from backend to frontend
 
 
 #### How to run
