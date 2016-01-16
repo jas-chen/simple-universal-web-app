@@ -18,7 +18,7 @@
 ```
 npm install
 
-# watch and build server.js and client.js, main.css
+# watch and build
 npm run watch
 
 # start node.js server
