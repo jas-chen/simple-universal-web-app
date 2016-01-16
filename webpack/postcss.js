@@ -4,6 +4,6 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = [
   autoprefixer({ browsers: ['last 2 versions'] })
-  // add cssnano line to minify css
+  // add cssnano to minify css
   // require('cssnano')
 ];
