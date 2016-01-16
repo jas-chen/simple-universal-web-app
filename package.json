@@ -5,10 +5,10 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "watch": "webpack --watch --colors --config webpack/config.dev.js",
-    "dev": "node-dev build/server.js",
-    "build": "webpack --colors --config webpack/config.dev.js",
-    "start": "node build/server.js",
+    "clean": "rimraf build",
+    "watch": "npm run clean && webpack --watch --colors --config webpack/config.dev.js",
+    "dev": "NODE_ENV=development node-dev src/server/index.js",
+    "build:dev": "npm run clean && webpack --colors --config webpack/config.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -31,9 +31,10 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "json-loader": "^0.5.4",
     "node-dev": "^2.7.1",
-    "null-loader": "^0.1.1",
+    "postcss-loader": "^0.8.0",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
+    "rimraf": "^2.5.0",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.11"
   }

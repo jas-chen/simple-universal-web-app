@@ -8,11 +8,12 @@ const buildPath = path.join(__dirname, '../build');
 
 module.exports = {
   context: path.resolve(__dirname, '..'),
-  entry: './src/client',
+  entry: './src/shared/view/App',
   output: {
-    path: path.join(buildPath, './www/static'),
+    libraryTarget: 'commonjs2',
+    path: path.join(buildPath, './App'),
     publicPath: '/static/',
-    filename: 'client.js'
+    filename: 'index.js'
   },
   progress: true,
   module: {
@@ -32,12 +33,12 @@ module.exports = {
       }
     ]
   },
-  postcss: require('./postcss.js'),
+  // postcss: require('./postcss.js'),
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     }),
-    new ExtractTextPlugin('[name].css', { allChunks: true })
+    new ExtractTextPlugin('style.css', { allChunks: true })
   ],
   resolve: {
     modulesDirectories: [

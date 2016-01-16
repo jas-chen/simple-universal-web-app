@@ -1,9 +1,9 @@
 'use strict';
 
-const server = require('./config.server.dev.js');
+const App = require('./config.App.dev.js');
 const client = require('./config.client.dev.js');
 
 module.exports = [
-  server,
+  App,
   client
 ];

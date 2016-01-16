@@ -1,10 +1,19 @@
-import path from 'path';
-import express from 'express';
-import React from 'react';
-import ReactServer from 'react-dom/server';
-import App from 'shared/view/App';
+'use strict';
 
+const path = require('path');
+const express = require('express');
+const React = require('react');
+const ReactServer = require('react-dom/server');
 const app = express();
+
+let App = require('../../build/App');
+
+// handle ES2015 module
+if (App.__esModule && App.default) {
+  App = App.default;
+}
+
+
 const NODE_PORT = process.env.NODE_PORT || 3000;
 const NODE_HOST = process.env.NODE_HOST || '0.0.0.0';
 
@@ -25,13 +34,15 @@ function renderHtml(element) {
 </html>`;
 }
 
-const staticPath = path.join(process.cwd(), './build/www');
+const staticPath = path.join(__dirname, '../../build/www');
 
 app.use(express.static(staticPath));
 
 app.get('/*', function (req, res, next) {
   if (req.accepts('html') && req.originalUrl !== '/favicon.ico') {
-    res.send(renderHtml(<App />));
+    res.send(renderHtml(
+      React.createElement(App, null)
+    ));
   } else {
     next();
   }
