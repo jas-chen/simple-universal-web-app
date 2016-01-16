@@ -42,16 +42,12 @@ const staticPath = path.join(__dirname, '../../build/www');
 
 app.use(express.static(staticPath));
 
-app.get('/*', function (req, res, next) {
+app.get('/', function (req, res) {
   const state = {
     num: Math.floor(Math.random() * 100)
   };
 
-  if (req.accepts('html') && req.originalUrl !== '/favicon.ico') {
-    res.send(renderHtml(state));
-  } else {
-    next();
-  }
+  res.send(renderHtml(state));
 });
 
 app.listen(NODE_PORT, NODE_HOST, (err) => {
