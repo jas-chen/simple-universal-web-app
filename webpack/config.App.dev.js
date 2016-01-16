@@ -40,6 +40,7 @@ module.exports = {
     }),
     new ExtractTextPlugin('style.css', { allChunks: true })
   ],
+  // server.js already required react, no need to require again
   externals: 'react',
   resolve: {
     modulesDirectories: [
