@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "Simple universal web app",
   "private": true,
-  "main": "index.js",
   "scripts": {
     "clean": "rimraf build",
     "watch": "npm run clean && webpack --watch --colors --config webpack/config.dev.js",
@@ -11,6 +10,13 @@
     "build:dev": "npm run clean && webpack --colors --config webpack/config.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": ">=4"
+  },
+  "os": [
+    "darwin",
+    "linux"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jas-chen/simple-universal-web-app.git"
